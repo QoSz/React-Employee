@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
   const [name, setName] = useState('No Name');
   return (
-    <div className="App">
+    <div className="App bg-red-300">
       <h1>React App</h1>
       <input type="text" onChange={(e) => setName(e.target.value)} placeholder={name}/>
       <Employee name="Yash" role="Software Developer" salary="£50,000"/>
