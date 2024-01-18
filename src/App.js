@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Employee from './components/Employee';
+import { useState } from 'react';
 
 function App() {
+  const [name, setName] = useState('No Name');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React App</h1>
+      <input type="text" onChange={(e) => setName(e.target.value)} placeholder={name}/>
+      <Employee name="Yash" role="Software Developer" salary="£50,000"/>
+      <Employee name="Crizi" salary="£25,000"/>
+      <Employee name={name} role="Consultant" salary="£70,000"/>
     </div>
   );
 }
