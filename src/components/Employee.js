@@ -1,6 +1,8 @@
+import EditEmployee from "./EditEmployee";
+
 export default function Employee(props) {
     return (
-        <div className="m-2 py-8 px-8 max-w-sm bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+        <div className="min-w-[350px] max-w-[350px] m-2 py-8 px-8 max-w-sm bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
             <img className="object-cover h-[100px] w-[100px] block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" src={props.img} alt="Woman's Face" />
             <div className="text-center space-y-2 sm:text-left">
                 <div className="space-y-0.5">
@@ -14,7 +16,7 @@ export default function Employee(props) {
                         {props.salary}
                     </p>
                 </div>
-                <button className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Update</button>
+                <EditEmployee id={props.id} name={props.name} role={props.role} salary={props.salary} updateEmployee={props.updateEmployee} />
             </div>
         </div>
     );
